@@ -1,17 +1,16 @@
 package conduitApp;
 
-import com.intuit.karate.junit5.Karate;
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ConduitTest {
 
-    @Karate.Test
-    Karate testAll() {
-        return Karate.run().relativeTo(getClass());
+    @Test
+    void testParallel() {
+        Results results = Runner.path("classpath:conduitApp/feature").parallel(5);
+        assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
-
-    @Karate.Test
-    Karate testTags() {
-        return Karate.run().tags("@debug").relativeTo(getClass());
-        }
  }
 

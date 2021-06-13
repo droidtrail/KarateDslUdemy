@@ -6,7 +6,7 @@ Feature: Articles
         Then method Post
         Then status 200
         * def token = response.user.token
-    @debug
+    @regression
     Scenario: Create a new article
         Given header Authorization = 'Token ' + token
         Given path 'articles'
