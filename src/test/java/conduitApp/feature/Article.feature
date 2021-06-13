@@ -1,11 +1,9 @@
+
 Feature: Articles
     Background: Define URL
-        * url apiUrl
-        Given path 'users/login'
-        And request {"user": {"email": "kakashisensei@test.com","password": "12345678"}}
-        Then method Post
-        Then status 200
-        * def token = response.user.token
+      Given url apiUrl
+      * def tokenResponse = callonce read('classpath:helpers/CreateToken.feature') {"email":"kakashisensei2@test.com","password":"12345678"}
+      * def token = tokenResponse.authToken
     @regression
     Scenario: Create a new article
         Given header Authorization = 'Token ' + token
