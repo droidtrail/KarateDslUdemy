@@ -8,10 +8,15 @@ function fn() {
      apiUrl: 'https://conduit.productionready.io/api/'
   }
   if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+    config.userEmail = 'kakashisensei2@test.com'
+    config.userPassword = '12345678'
   }
+  if (env == 'qa') {
+    config.userEmail = 'kakashisensei2@test.com'
+    config.userPassword = '12345678'
+  }
+
+  var accessToken = karate.callSingle('classpath:helpers/CreateToken.feature', config).authToken
+  karate.configure('headers',{Authorization: 'Token ' + accessToken})
   return config;
 }
