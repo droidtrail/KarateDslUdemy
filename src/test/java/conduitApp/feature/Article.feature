@@ -10,7 +10,7 @@ Feature: Articles
         When method Post
         And match response.article.title == 'Teste_01'
         Then status 200
-    @debug
+
     Scenario: Create and delete article
 #        Create article
         Given path 'articles'
