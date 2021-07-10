@@ -13,16 +13,20 @@
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>        
         <karate.version>1.0.1</karate.version>
-    </properties>    
-
+        <javafaker.version>1.0.2</javafaker.version>
+    </properties>
     <dependencies>         
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit5</artifactId>
             <version>${karate.version}</version>
-        </dependency>		
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
     </dependencies>
-
     <build>
         <testResources>
             <testResource>
@@ -55,6 +59,5 @@
                 </configuration>
             </plugin>          
         </plugins>        
-    </build>       
-    
+    </build>
 </project>
