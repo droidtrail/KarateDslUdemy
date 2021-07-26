@@ -15,6 +15,7 @@
         <karate.version>1.0.1</karate.version>
         <javafaker.version>1.0.2</javafaker.version>
         <cucumber.reporting.version>5.5.2</cucumber.reporting.version>
+        <mssql.jdbc.version>8.4.1.jre11</mssql.jdbc.version>
     </properties>
     <dependencies>         
         <dependency>
@@ -32,7 +33,11 @@
             <artifactId>cucumber-reporting</artifactId>
             <version>${cucumber.reporting.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>${mssql.jdbc.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <testResources>
