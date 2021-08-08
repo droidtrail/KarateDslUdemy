@@ -5,7 +5,9 @@ import io.gatling.core.Predef._
 
 class PerfTest extends Simulation {
 
-  val protocol = karateProtocol()
+  val protocol = karateProtocol(
+    "/api/articles/{slugId}"-> Nil
+  )
 
 //  protocol.nameResolver = (req, ctx) => req.getHeader("karate-name")
 //  protocol.runner.karateEnv("perf")
