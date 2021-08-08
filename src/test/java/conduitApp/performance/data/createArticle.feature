@@ -16,6 +16,8 @@ Feature: Articles
     * def slugId = response.article.slug
     Then status 200
 
+    * karate.pause(5000)
+
     Given path 'articles/' + slugId
     When method Delete
     Then status 200

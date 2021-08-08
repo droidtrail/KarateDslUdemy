@@ -1,4 +1,4 @@
-package performance.data
+package conduitApp.performance.data
 
 import com.intuit.karate.gatling.PreDef._
 import io.gatling.core.Predef._
