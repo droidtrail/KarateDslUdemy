@@ -8,6 +8,9 @@ Feature: Articles
     * set articleRequestBody.article.description = generatedArticleValues.description
     * set articleRequestBody.article.body = generatedArticleValues.body
 
+    * def sleep = function(ms){java.lang.Thread.sleep(ms)}
+    * def pause = karate.get('_gatling.pause',sleep)
+
   Scenario: Create and delete article
 #        Create article
     Given path 'articles'
@@ -16,7 +19,7 @@ Feature: Articles
     * def slugId = response.article.slug
     Then status 200
 
-    * karate.pause(5000)
+    * pause(5000)
 
     Given path 'articles/' + slugId
     When method Delete
