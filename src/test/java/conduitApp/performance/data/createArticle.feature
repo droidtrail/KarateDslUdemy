@@ -9,7 +9,7 @@ Feature: Articles
     * set articleRequestBody.article.body = generatedArticleValues.body
 
     * def sleep = function(ms){java.lang.Thread.sleep(ms)}
-    * def pause = karate.get('_gatling.pause',sleep)
+    * def pause = karate.get('__gatling.pause', sleep)
 
   Scenario: Create and delete article
 #        Create article
